@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { TMovie } from "../../../movies";
 import "./Nav.css";
+import SearchBar from "../searchBar/SearchBar";
 interface Props {
   dataMovies: TMovie[];
   setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
@@ -89,6 +90,10 @@ const Nav: React.FC<Props> = ({
               Z-A
             </button>
           </Link>
+        </li>
+
+        <li>
+          <SearchBar dataMovies={dataMovies} />
         </li>
       </ul>
     </nav>
