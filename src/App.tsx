@@ -28,8 +28,28 @@ function App() {
           />
         }
       >
-        <Route index element={<Home dataMovies={dataMovies} />} />
-        <Route path="movies/:details" element={<DetailPage />} />
+        <Route
+          index
+          element={
+            <Home
+              setDataMovies={setDataMovies}
+              dataMovies={dataMovies}
+              setCounter={setCounter}
+              counter={counter}
+            />
+          }
+        />
+        <Route
+          path="movies/:details"
+          element={
+            <DetailPage
+              setDataMovies={setDataMovies}
+              dataMovies={dataMovies}
+              setCounter={setCounter}
+              counter={counter}
+            />
+          }
+        />
       </Route>
     )
   );

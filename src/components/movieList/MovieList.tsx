@@ -4,9 +4,17 @@ import "./MovieList.css";
 
 interface Props {
   dataMovies: TMovie[];
+  setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
+  counter: number;
+  setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const MovieList: React.FC<Props> = ({ dataMovies }) => {
+const MovieList: React.FC<Props> = ({
+  setDataMovies,
+  dataMovies,
+  setCounter,
+  counter,
+}) => {
   return (
     <section className="flex stn-movieList">
       {dataMovies.map((singleMovie) => (
@@ -18,6 +26,10 @@ const MovieList: React.FC<Props> = ({ dataMovies }) => {
           duration={singleMovie.duration}
           genre={singleMovie.genre}
           rate={singleMovie.rate}
+          setDataMovies={setDataMovies}
+          dataMovies={dataMovies}
+          setCounter={setCounter}
+          counter={counter}
         />
       ))}
     </section>

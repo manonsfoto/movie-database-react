@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./MovieCard.css";
+import BtnGenre from "../btnGenre/BtnGenre";
+import { TMovie } from "../../../movies";
 
 interface Props {
   title: string;
@@ -8,6 +10,10 @@ interface Props {
   duration: string;
   genre: string[];
   rate: string;
+  dataMovies: TMovie[];
+  setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
+  counter: number;
+  setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const MovieCard: React.FC<Props> = (props) => {
@@ -25,9 +31,14 @@ const MovieCard: React.FC<Props> = (props) => {
       </Link>
       <div className="btn-genre-wrapper">
         {props.genre.map((singleGenre) => (
-          <button className="btn-genre" key={singleGenre} type="button">
-            {singleGenre}
-          </button>
+          <BtnGenre
+            key={singleGenre}
+            genre={singleGenre}
+            setDataMovies={props.setDataMovies}
+            dataMovies={props.dataMovies}
+            setCounter={props.setCounter}
+            counter={props.counter}
+          />
         ))}
       </div>
     </article>
