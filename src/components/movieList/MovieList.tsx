@@ -27,7 +27,6 @@ const MovieList: React.FC<Props> = ({
           genre={singleMovie.genre}
           rate={singleMovie.rate}
           setDataMovies={setDataMovies}
-          dataMovies={dataMovies}
           setCounter={setCounter}
           counter={counter}
         />

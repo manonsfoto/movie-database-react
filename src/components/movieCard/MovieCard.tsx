@@ -10,7 +10,7 @@ interface Props {
   duration: string;
   genre: string[];
   rate: string;
-  dataMovies: TMovie[];
+
   setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
@@ -35,7 +35,6 @@ const MovieCard: React.FC<Props> = (props) => {
             key={singleGenre}
             genre={singleGenre}
             setDataMovies={props.setDataMovies}
-            dataMovies={props.dataMovies}
             setCounter={props.setCounter}
             counter={props.counter}
           />

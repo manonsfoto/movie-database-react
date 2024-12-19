@@ -2,14 +2,14 @@ import movies, { TMovie } from "../../../movies";
 import "./BtnGenre.css";
 interface Props {
   genre: string;
-  dataMovies: TMovie[];
+
   setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
   counter: number;
 }
 const BtnGenre: React.FC<Props> = ({
   genre,
-  dataMovies,
+
   setDataMovies,
   setCounter,
   counter,

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import movies, { TMovie } from "../../../movies";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BtnGenre from "../../components/btnGenre/BtnGenre";
+
 interface Props {
-  dataMovies: TMovie[];
   setDataMovies: React.Dispatch<React.SetStateAction<TMovie[]>>;
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 const DetailPage: React.FC<Props> = ({
   setDataMovies,
-  dataMovies,
+
   setCounter,
   counter,
 }) => {
@@ -37,14 +37,15 @@ const DetailPage: React.FC<Props> = ({
       <p>{singleMovie.rate}</p>
       <p>
         {singleMovie.genre.map((singleGenre) => (
-          <BtnGenre
-            key={singleGenre}
-            genre={singleGenre}
-            setDataMovies={setDataMovies}
-            dataMovies={dataMovies}
-            setCounter={setCounter}
-            counter={counter}
-          />
+          <Link to={"/"}>
+            <BtnGenre
+              key={singleGenre}
+              genre={singleGenre}
+              setDataMovies={setDataMovies}
+              setCounter={setCounter}
+              counter={counter}
+            />
+          </Link>
         ))}
       </p>
     </section>
