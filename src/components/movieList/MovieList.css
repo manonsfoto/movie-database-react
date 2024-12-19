@@ -1,0 +1,5 @@
+.stn-movieList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

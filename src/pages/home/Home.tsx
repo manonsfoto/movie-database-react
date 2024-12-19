@@ -1,7 +1,14 @@
-const Home = () => {
+import { TMovie } from "../../../movies";
+import MovieList from "../../components/movieList/MovieList";
+
+interface Props {
+  dataMovies: TMovie[];
+}
+
+const Home: React.FC<Props> = ({ dataMovies }) => {
   return (
     <>
-      <h1>Home</h1>
+      <MovieList dataMovies={dataMovies} />
     </>
   );
 };

@@ -7,22 +7,29 @@ import {
 import "./App.css";
 import RootLayout from "./rootLayout/RootLayout";
 import Home from "./pages/home/Home";
-import DateAsc from "./pages/dateAsc/DateAsc";
-import DateDes from "./pages/dateDes/DateDes";
-import BestRate from "./pages/bestRate/BestRate";
-import AtoZ from "./pages/aToZ/AToZ";
-import ZtoA from "./pages/zToA/ZToA";
+import { useState } from "react";
+import movies, { TMovie } from "../movies";
+import DetailPage from "./pages/detailPage/DetailPage";
 
 function App() {
+  const [dataMovies, setDataMovies] = useState<TMovie[]>(movies);
+  const [counter, setCounter] = useState<number>(0);
+
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
-        <Route path="date-asc" element={<DateAsc />} />
-        <Route path="date-des" element={<DateDes />} />
-        <Route path="bestrate" element={<BestRate />} />
-        <Route path="title-asc" element={<AtoZ />} />
-        <Route path="title-des" element={<ZtoA />} />
+      <Route
+        path="/"
+        element={
+          <RootLayout
+            dataMovies={dataMovies}
+            setDataMovies={setDataMovies}
+            counter={counter}
+            setCounter={setCounter}
+          />
+        }
+      >
+        <Route index element={<Home dataMovies={dataMovies} />} />
+        <Route path="movies/:details" element={<DetailPage />} />
       </Route>
     )
   );

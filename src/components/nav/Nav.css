@@ -1,0 +1,9 @@
+.navbar {
+  flex-direction: row;
+}
+.navbar li {
+  list-style: none;
+}
+nav {
+  margin: 10rem auto;
+}

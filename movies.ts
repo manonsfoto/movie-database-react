@@ -1,4 +1,4 @@
-type TMovie = {
+export type TMovie = {
   title: string;
   year: string;
   director: string;
